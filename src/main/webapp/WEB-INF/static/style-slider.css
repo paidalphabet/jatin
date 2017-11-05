@@ -1,0 +1,889 @@
+.da-slider{
+	width: 100%;
+	min-width: 320px;
+	height:420px;
+	position: relative;
+	margin: 0 auto;
+	overflow: hidden;
+	background: #fff repeat 0% 0%;
+	-webkit-transition: background-position 1s ease-out 0.3s;
+	-moz-transition: background-position 1s ease-out 0.3s;
+	-o-transition: background-position 1s ease-out 0.3s;
+	-ms-transition: background-position 1s ease-out 0.3s;
+	transition: background-position 1s ease-out 0.3s;
+}
+@supports (-webkit-appearance:none) {
+    .da-slider{
+        height:445px !important;
+    }
+}
+.da-slide{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0px;
+	left: 0px;
+	font-family:'Roboto', sans-serif;
+	text-align: left;
+}
+.da-slide h2 .claylogoBlue{ width:100%; height:78px; float:left; background:url(../images/banners/clay-banner-logo.png) no-repeat center center; margin-bottom:15px}
+.da-slide-current{
+	z-index: 1000}
+.da-slider-fb .da-slide{
+	
+}
+.da-slider-fb  .da-slide.da-slide-current{
+	left: 0px}
+.da-slide h2,
+.da-slide p,
+.da-slide .da-link,
+.da-slide .da-img{
+	position: absolute;
+	opacity: 0;
+	right:0}
+.da-slider-fb .da-slide h2,
+.da-slider-fb .da-slide p,
+.da-slider-fb .da-slide .da-link{
+	
+	opacity: 1;
+}
+.da-slider-fb .da-slide .da-img{
+	left:0%;
+	opacity: 1;
+}
+.bannerBox img{width:100%; height:auto}
+.innerBannerTitle{	width: 92%;	top:0; left:4%; position:absolute;z-index: 10; height:100%; padding:0; margin:0;
+                  	display: -webkit-box;display: -webkit-flex;display: -moz-box;display: -ms-flexbox;display: flex;
+                    -webkit-flex-align: center;-ms-flex-align: center;-webkit-align-items: center;align-items: center;}
+.innerBannerTitle h2{color: #525252;font:400 40px/100% 'Roboto', sans-serif;text-align:left; padding:0; margin:0}                    
+.innerBannerTitle h2 span{color: #525252;z-index: 10;font:400 33px/100% 'Roboto', sans-serif;text-align:left; display:block}
+.da-slide h2 span i.fa-inr{ font-weight:100; font-size:34px}
+	
+.da-slide h2{
+	color: #525252;
+	width: 50%;
+	top:15%;
+	z-index: 10;
+	text-align:left; display:inline-block
+}
+.da-slide h2 span{ display:block;color: #1a3192; line-height:100%; width:100%}
+.da-slide p{
+	width:100%;
+	top:0;
+	left:0;
+	position:absolute;
+	height:100%;
+	overflow: hidden;
+}
+.da-slide .da-img{
+	width:100%;
+	top:0;
+	left:0;
+	position:absolute;
+	height:100%;
+	overflow: hidden;
+}
+.da-slide .da-img img{width:100%; height:100%}
+.da-slide .da-link{
+	bottom:10%; /*depends on p height*/
+	color: #2f80c1;
+	padding: 0 20px;
+	font-size: 18px;
+	line-height: 32px;
+	min-width: 20px;
+	text-align: center;
+	background: rgba(255,255,255,0.4);
+	white-space:nowrap;
+	 text-decoration:none;
+	 box-shadow:0 0 0 1px rgba(47,150,209,0.2)
+}
+.da-slide .da-link:hover{
+	background: rgba(255,255,255,0.3);
+}
+.da-dots{
+	width: 100%;
+	position: absolute;
+	text-align: center;
+	left: 0px;
+	bottom: 0;
+	height:4px;
+	z-index: 2000;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+}
+.da-dots span{
+	display: inline-block;
+	position: relative;
+	width: 50px;
+	height: 4px;
+	background: #656565;
+	margin:0 3px;
+	cursor: pointer;
+	top:-12px
+}
+.da-dots span.da-dots-current:after{
+	content: '';
+	width: 50px;
+	height: 4px;
+	position: absolute;
+	top: 0;
+	left: 0px;
+	background: #ccc;
+	transition:ease-in-out all 0.2s;
+	box-shadow:0 -1px 3px 0 #000
+}
+.da-dots span:hover{background: #4e92bf;transition:ease-in-out all 0.2s}
+.da-arrows{display:block;
+	width:84px;
+	position: absolute;
+	text-align: center;
+	right:2%;
+	bottom: 0;
+	height:30px;
+	z-index: 2000;
+	-moz-user-select: none;
+	-webkit-user-select: none;
+	
+}
+.da-arrows span{
+	position: absolute;
+	bottom:0;
+	height: 30px;
+	width: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+	z-index: 2000;
+	opacity: 0;transition:ease-in-out all 0.2s
+/*	box-shadow: 
+		1px 1px 1px rgba(0,0,0,0.1) inset, 
+		1px 1px 1px rgba(255,255,255,0.1);
+	-webkit-transition: opacity 0.4s ease-in-out-out 0.2s;
+	-moz-transition: opacity 0.4s ease-in-out-out 0.2s;
+	-o-transition: opacity 0.4s ease-in-out-out 0.2s;
+	-ms-transition: opacity 0.4s ease-in-out-out 0.2s;
+	transition: opacity 0.4s ease-in-out-out 0.2s;
+*/
+}
+.da-slider:hover .da-arrows span{
+	opacity: 1;transition:ease-in-out all 0.2s
+}
+.da-arrows span:after{
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 20px;
+	top: 5px;
+	left: 5px;
+	background: transparent url(../images/arrows.png) no-repeat top left;
+	opacity:.7;transition:ease-in-out all 0.2s
+
+}
+.da-arrows span:hover:after{
+	box-shadow: 1px 1px 4px rgba(0,0,0,0); opacity:1;transition:ease-in-out all 0.2s
+}
+.da-arrows span:active:after{
+	box-shadow: 1px 1px 1px rgba(255,255,255,0);
+}
+.da-arrows span.da-arrows-next:after{
+	background-position: top right;
+}
+.da-arrows span.da-arrows-prev{
+	left: 15px;
+}
+.da-arrows span.da-arrows-next{
+	right: 15px;
+}
+
+.da-slide-current h2,
+.da-slide-current p,
+.da-slide-current .da-link{
+	right: 0;
+	opacity: 1;
+}
+.da-slide-current .da-img{
+	
+	opacity: 1;
+}
+h3.aplinkHead div.dwTxt{ display:inline-block; position:relative; top:-3px}
+/* Animation classes and animations */
+
+/* Slide in from the right*/
+.da-slide-fromright h2{
+	-webkit-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	-moz-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	-o-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	-ms-animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+	animation: fromRightAnim1 0.6s ease-in-out 0.8s both;
+}
+.da-slide-fromright p{
+	-webkit-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	-moz-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	-o-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	-ms-animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+	animation: fromRightAnim2 0.6s ease-in-out 0.8s both;
+}
+.da-slide-fromright .da-link{
+	-webkit-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	-moz-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	-o-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	-ms-animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+	animation: fromRightAnim3 0.4s ease-in-out 1.2s both;
+}
+.da-slide-fromright .da-img{
+	-webkit-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	-moz-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	-o-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	-ms-animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+	animation: fromRightAnim4 0.6s ease-in-out 0.8s both;
+}
+@-webkit-keyframes fromRightAnim1{
+	0%{  opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-webkit-keyframes fromRightAnim2{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@-webkit-keyframes fromRightAnim3{
+	0%{ opacity: 0; }
+	1%{opacity: 0; }
+	100%{opacity: 1; }
+}
+@-webkit-keyframes fromRightAnim4{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@-moz-keyframes fromRightAnim1{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-moz-keyframes fromRightAnim2{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-moz-keyframes fromRightAnim3{
+	0%{ opacity: 0; }
+	1%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-moz-keyframes fromRightAnim4{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@-o-keyframes fromRightAnim1{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-o-keyframes fromRightAnim2{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@-o-keyframes fromRightAnim3{
+	0%{ opacity: 0; }
+	1%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-o-keyframes fromRightAnim4{
+	0%{opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@-ms-keyframes fromRightAnim1{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-ms-keyframes fromRightAnim2{
+	0%{ opacity: 0; }
+	100%{  opacity: 1; }
+}
+@-ms-keyframes fromRightAnim3{
+	0%{ opacity: 0; }
+	1%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@-ms-keyframes fromRightAnim4{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@keyframes fromRightAnim1{
+	0%{ opacity: 0; }
+	100%{ /*left: 0%*/; opacity: 1; }
+}
+@keyframes fromRightAnim2{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@keyframes fromRightAnim3{
+	0%{ opacity: 0; }
+	1%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@keyframes fromRightAnim4{
+	0%{  opacity: 0; }
+	100%{  opacity: 1; }
+}
+/* Slide in from the left*/
+.da-slide-fromleft h2{
+	-webkit-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	-moz-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	-o-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	-ms-animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+	animation: fromLeftAnim1 0.6s ease-in-out 0.6s both;
+}
+.da-slide-fromleft p{
+	-webkit-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	-moz-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	-o-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	-ms-animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+	animation: fromLeftAnim2 0.6s ease-in-out 0.6s both;
+}
+.da-slide-fromleft .da-link{
+	-webkit-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	-moz-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	-o-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	-ms-animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+	animation: fromLeftAnim3 0.4s ease-in-out 1.2s both;
+}
+.da-slide-fromleft .da-img{
+	-webkit-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	-moz-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	-o-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	-ms-animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+	animation: fromLeftAnim4 0.6s ease-in-out 0.6s both;
+}
+@-webkit-keyframes fromLeftAnim1{
+	0%{opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-webkit-keyframes fromLeftAnim2{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-webkit-keyframes fromLeftAnim3{
+	0%{ opacity: 0; }
+	1%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-webkit-keyframes fromLeftAnim4{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@-moz-keyframes fromLeftAnim1{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-moz-keyframes fromLeftAnim2{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-moz-keyframes fromLeftAnim3{
+	0%{ opacity: 0; }
+	1%{opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-moz-keyframes fromLeftAnim4{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@-o-keyframes fromLeftAnim1{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-o-keyframes fromLeftAnim2{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@-o-keyframes fromLeftAnim3{
+	0%{opacity: 0; }
+	1%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@-o-keyframes fromLeftAnim4{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@-ms-keyframes fromLeftAnim1{
+	0%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-ms-keyframes fromLeftAnim2{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@-ms-keyframes fromLeftAnim3{
+	0%{  opacity: 0; }
+	1%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@-ms-keyframes fromLeftAnim4{
+	0%{opacity: 0; }
+	100%{ opacity: 1; }
+}
+
+@keyframes fromLeftAnim1{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@keyframes fromLeftAnim2{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+@keyframes fromLeftAnim3{
+	0%{ opacity: 0; }
+	1%{ opacity: 0; }
+	100%{ opacity: 1; }
+}
+@keyframes fromLeftAnim4{
+	0%{ opacity: 0; }
+	100%{opacity: 1; }
+}
+/* Slide out to the right */
+.da-slide-toright h2{
+	-webkit-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	-moz-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	-o-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	-ms-animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+	animation: toRightAnim1 0.6s ease-in-out 0.6s both;
+}
+.da-slide-toright p{
+	-webkit-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	-moz-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	-o-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	-ms-animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+	animation: toRightAnim2 0.6s ease-in-out 0.3s both;
+}
+.da-slide-toright .da-link{
+	-webkit-animation: toRightAnim3 0.4s ease-in-out both;
+	-moz-animation: toRightAnim3 0.4s ease-in-out both;
+	-o-animation: toRightAnim3 0.4s ease-in-out both;
+	-ms-animation: toRightAnim3 0.4s ease-in-out both;
+	animation: toRightAnim3 0.4s ease-in-out both;
+}
+.da-slide-toright .da-img{
+	-webkit-animation: toRightAnim4 0.6s ease-in-out both;
+	-moz-animation: toRightAnim4 0.6s ease-in-out both;
+	-o-animation: toRightAnim4 0.6s ease-in-out both;
+	-ms-animation: toRightAnim4 0.6s ease-in-out both;
+	animation: toRightAnim4 0.6s ease-in-out both;
+}
+@-webkit-keyframes toRightAnim1{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-webkit-keyframes toRightAnim2{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-webkit-keyframes toRightAnim3{
+	0%{ opacity: 1; }
+	99%{  opacity: 0; }
+	100%{  opacity: 0; }
+}
+@-webkit-keyframes toRightAnim4{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+
+@-moz-keyframes toRightAnim1{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-moz-keyframes toRightAnim2{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-moz-keyframes toRightAnim3{
+	0%{ opacity: 1; }
+	99%{  opacity: 0; }
+	100%{  opacity: 0; }
+}
+@-moz-keyframes toRightAnim4{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+
+@-o-keyframes toRightAnim1{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-o-keyframes toRightAnim2{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-o-keyframes toRightAnim3{
+	0%{ opacity: 1; }
+	99%{  opacity: 0; }
+	100%{  opacity: 0; }
+}
+@-o-keyframes toRightAnim4{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+
+@-ms-keyframes toRightAnim1{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-ms-keyframes toRightAnim2{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-ms-keyframes toRightAnim3{
+	0%{ opacity: 1; }
+	99%{  opacity: 0; }
+	100%{  opacity: 0; }
+}
+@-ms-keyframes toRightAnim4{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+
+@keyframes toRightAnim1{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@keyframes toRightAnim2{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@keyframes toRightAnim3{
+	0%{ opacity: 1; }
+	99%{  opacity: 0; }
+	100%{  opacity: 0; }
+}
+@keyframes toRightAnim4{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+/* Slide out to the left*/
+
+.da-slide-toleft h2{
+	-webkit-animation: toLeftAnim1 0.6s ease-in-out both;
+	-moz-animation: toLeftAnim1 0.6s ease-in-out both;
+	-o-animation: toLeftAnim1 0.6s ease-in-out both;
+	-ms-animation: toLeftAnim1 0.6s ease-in-out both;
+	animation: toLeftAnim1 0.6s ease-in-out both;
+}
+.da-slide-toleft p{
+	-webkit-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	-moz-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	-o-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	-ms-animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+	animation: toLeftAnim2 0.6s ease-in-out 0.3s both;
+}
+.da-slide-toleft .da-link{
+	-webkit-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	-moz-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	-o-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	-ms-animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+	animation: toLeftAnim3 0.6s ease-in-out 0.6s both;
+}
+.da-slide-toleft .da-img{
+	-webkit-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	-moz-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	-o-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	-ms-animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+	animation: toLeftAnim4 0.6s ease-in-out 0.5s both;
+}
+.intlSim h2{ right:5% !important; width:45% !important; font-size:52px !important; top:10% !important; text-align:center !important}
+.intlSim h2 span{font-size:40px !important}
+.vatRefund h2{ right:5% !important; width:45% !important; font-size:52px !important; top:10% !important; text-align:center !important}
+.vatRefund h2 span{font-size:40px !important;}
+.forexSlide h2{ right:5% !important; width:45% !important; font-size:52px !important; top:10% !important; text-align:center !important}
+.forexSlide h2 span{font-size:40px !important;}
+.lookOut h2{ right:5% !important; width:45% !important; font-size:52px !important; top:10% !important; text-align:center !important}
+.lookOut h2 span{font-size:40px !important;}
+.brodCast h2{ right:5% !important; width:45% !important; font-size:52px !important; top:10% !important; text-align:center !important}
+.brodCast h2 span{font-size:40px !important;}
+.vatMgmt h2{ right:5% !important; width:45% !important; font-size:52px !important; top:10% !important; text-align:center !important}
+.vatMgmt h2 span{font-size:40px !important;}
+
+.imgBlank h2{ left:0 !important; width:100% !important; color:#fff !important; font-size:52px !important; top:15% !important; text-align:center !important}
+.imgBlank h2 span{font-size:40px !important; color:#fff !important}
+.imgBlank h2 .claylogoBlue{filter:brightness(500%) grayscale(1);-ms-filter:brightness(500%) grayscale(1);-moz-filter:brightness(500%) grayscale(1);-webkit-filter:brightness(500%) grayscale(1);}
+.imgBlank{ background:rgba(26,49,146,1) url(../images/bg-texture-6.png) no-repeat 100% 100%}
+.imgBlank .da-img img{visibility:hidden;}
+
+.illustBanner h2{ left:5% !important; width:56% !important; font-size:52px !important; top:10% !important; text-align:center !important}
+.illustBanner h2 span{font-size:40px !important; color:#fff}
+.illustBanner .claylogoBlue{filter:brightness(500%) grayscale(1);-ms-filter:brightness(500%) grayscale(1);-moz-filter:brightness(500%) grayscale(1);-webkit-filter:brightness(500%) grayscale(1);}
+
+@-webkit-keyframes toLeftAnim1{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-webkit-keyframes toLeftAnim2{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-webkit-keyframes toLeftAnim3{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-webkit-keyframes toLeftAnim4{
+	0%{ opacity: 1; }
+	70%{   opacity: 0; }
+	100%{  opacity: 0; }
+}
+
+@-moz-keyframes toLeftAnim1{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-moz-keyframes toLeftAnim2{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-moz-keyframes toLeftAnim3{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-moz-keyframes toLeftAnim4{
+	0%{ opacity: 1; }
+	70%{   opacity: 0; }
+	100%{  opacity: 0; }
+}
+
+@-o-keyframes toLeftAnim1{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-o-keyframes toLeftAnim2{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-o-keyframes toLeftAnim3{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-o-keyframes toLeftAnim4{
+	0%{ opacity: 1; }
+	70%{   opacity: 0; }
+	100%{  opacity: 0; }
+}
+
+@-ms-keyframes toLeftAnim1{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-ms-keyframes toLeftAnim2{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-ms-keyframes toLeftAnim3{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@-ms-keyframes toLeftAnim4{
+	0%{ opacity: 1; }
+	70%{   opacity: 0; }
+	100%{  opacity: 0; }
+}
+
+@keyframes toLeftAnim1{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@keyframes toLeftAnim2{
+	0%{ opacity: 1; }
+	30%{   opacity: 1; }
+	100%{  opacity: 0; }
+}
+@keyframes toLeftAnim3{
+	0%{ opacity: 1; }
+	100%{  opacity: 0; }
+}
+@keyframes toLeftAnim4{
+	0%{ opacity: 1; }
+	70%{   opacity: 0; }
+	100%{  opacity: 0; }
+}
+@media only screen and (max-width: 800px) 
+{
+.bannerBox{ max-height:265px}
+.da-slider{ height:265px !important}
+.da-slide{ height:265px !important}
+.da-slide h2{top:2% !important}
+.da-slide h2 .claylogoBlue{ background:url("../images/banners/clay-banner-logo.png") no-repeat center top / 50px 50px; height:60px}
+.da-slide h2 span{font-size:28px !important}
+}
+
+
+@media only screen and (max-width: 799px) 
+{
+.da-slider{ height:264px !important}
+.da-slide h2{ font-size:34px !important; top:15% !important}
+.da-slide h2 span{font-size:26px !important}
+.da-slide h2 span i.fa-inr{font-size:26px !important}
+.bannerBox{overflow:hidden}
+.intlSim h2{ right:5% !important; width:50% !important;}
+.vatRefund h2{ right:5% !important; width:50% !important}
+.forexSlide h2{ right:5% !important; width:50% !important}
+.vatMgmt h2{ right:5% !important; width:50% !important}
+.lookOut h2{ right:5% !important; top:5% !important; width:50% !important}
+.brodCast h2{ right:5% !important;top:5% !important; width:55% !important}
+h3.aplinkHead div.dwTxt{ display:inline-block; position:relative; top:-3px}
+}
+@media only screen and (max-width: 640px) 
+{
+.da-slider:hover .da-arrows span{
+	opacity: 1
+}
+.da-slider .da-arrows span{
+	opacity: 1
+}
+.da-dots{ display:none}
+.da-slider{ height:216px !important}
+.da-slide{ height:216px !important}
+.da-slide h2{ font-size:28px !important; top:10% !important}
+.da-slide h2 span{font-size:22px !important; font-weight:400 !important}
+.da-slide h2 span i.fa-inr{font-size:22px !important}
+.da-slide h2 .claylogoBlue{ margin-bottom:0; background:url("../images/banners/clay-banner-logo.png") no-repeat center top / 40px 40px; height:45px}
+.bannerBox{overflow:hidden; width: 100% !important; min-height:90px; position:relative;float:left; background:#1A3192}
+.innerBannerTitle h2{color:#fff; font-size:26px !important; text-align:center}
+.innerBannerTitle h2 span{ display:none}
+.bannerBox img{ display:none;}
+.da-img img{ display:block}
+.breadCrumbs{ visibility:hidden; height:24px; display:none}
+.intlSim h2{ right:5% !important; width:50% !important;}
+.vatRefund h2{ right:5% !important; width:45% !important}
+.forexSlide h2{ right:5% !important; width:50% !important}
+.vatMgmt h2{ right:5% !important; width:50% !important}
+.lookOut h2{ right:5% !important; top:5% !important; width:58% !important}
+.brodCast h2{ right:5% !important;top:5% !important; width:58% !important}
+.spacer{ display:none}
+.leftContainer h1{ margin-bottom:0}
+.leftContainer h1 span{font:400 22px/28px "Roboto",sans-serif}
+.allConentBox h1 span{font:400 22px/28px "Roboto",sans-serif; display:none}
+.showOnMobile{ display:block}
+.hideOnMobile{ display:none !important}
+.cd-horizontal-timeline{ margin:0 auto}
+.AbouUsOuter ul li div.detailtext h3{ margin-top:20px}
+.offerBoxes h4.grayFullHeading{ background:#eee;width:100%}
+h3.aplinkHead{ margin:0 auto}
+h3.aplinkHead div.dwTxt{ display:inline-block; position:relative; top:-3px}
+.da-slide h2 .bigGray a{ font:400 14px/24px "Roboto",sans-serif; padding:0 10px}
+}
+@media only screen and (max-width: 560px) 
+{
+.appDownload{ height:38px}
+.appDownload a i{font-size:23px; line-height:36px;}
+div.btnTxt{font:300 12px/16px "Roboto",sans-serif}
+div.btnSubTxt{font:400 16px/16px "Roboto",sans-serif}
+.bannerBox{overflow:hidden}
+.innerBannerTitle h2{ font:400 30px/100% "Roboto",sans-serif}
+.intlSim h2{ right:5% !important; width:45% !important;}
+.vatRefund h2{ right:5% !important; width:50% !important}
+.vatRefund h2 span{background:rgba(255,255,255,0.5); box-shadow:2px 2px 0px 0 rgba(0,0,0,.3)}
+.forexSlide h2{ right:5% !important; width:50% !important}
+.vatMgmt h2{ right:5% !important; width:50% !important}
+.lookOut h2{ right:5% !important; top:5% !important; width:58% !important}
+.brodCast h2{ right:5% !important;top:5% !important; width:58% !important}
+
+}
+@media only screen and (max-width: 530px) 
+{
+.da-slider{ height:216px !important}
+.da-slide h2{ font-size:28px !important; top:5% !important}
+.da-slide h2 span{font-size:20px !important; font-weight:300 !important}
+.da-slide h2 span i.fa-inr{font-size:20px !important}
+.da-slide h2 .claylogoBlue{ background:url("../images/banners/clay-banner-logo.png") no-repeat center top / 40px 40px; height:45px}
+.illustBanner .da-img img{ visibility:hidden; }
+.illustBanner .da-img {background:#1A3192 url(../images/bg-texture-6.png) no-repeat center center / 100% 100%}
+.illustBanner h2{width:90% !important; top:10% !important}
+.appDownload{ height:38px}
+.appDownload a i{font-size:23px; line-height:36px;}
+div.btnTxt{font:300 12px/16px "Roboto",sans-serif}
+div.btnSubTxt{font:400 16px/16px "Roboto",sans-serif}
+.bannerBox{overflow:hidden}
+.innerBannerTitle h2{ font:400 30px/100% "Roboto",sans-serif}
+.intlSim h2{ right:5% !important; width:50% !important;}
+.vatRefund h2{ right:5% !important; width:50% !important}
+.forexSlide h2{ right:5% !important; width:50% !important}
+.vatMgmt h2{ right:5% !important; width:50% !important}
+.lookOut h2{ right:5% !important; top:5% !important; width:58% !important}
+.brodCast h2{ right:5% !important;top:5% !important; width:58% !important}
+}
+@media only screen and (max-width: 360px) 
+{
+.da-slider,.da-slide{ height:200px !important}
+.da-slide h2{ font-size:28px !important; top:15% !important; margin:0}
+.da-slide h2 span{font-size:20px !important; font-weight:300 !important}
+.da-slide h2 .claylogoBlue{ background:url("../images/banners/clay-banner-logo.png") no-repeat center top / 40px 40px; height:45px;}
+.da-slide h2 .bigGray a{ font:400 14px/24px "Roboto",sans-serif; padding:0 7px}
+.appDownload{ height:38px}
+.appDownload a i{font-size:23px; line-height:36px;}
+div.btnTxt{font:300 12px/16px "Roboto",sans-serif}
+div.btnSubTxt{font:400 16px/16px "Roboto",sans-serif}
+.bannerBox{overflow:hidden}
+.bannerBox img{width:170% !important; float:left; left:-15%}
+.lookOut img{width:160% !important; float:left; left:-13%; position:relative}
+.brodCast img{width:113% !important; float:left; left:-5%; position:relative}
+h3.aplinkHead{ margin-top:0}
+h3.aplinkHead div.dwTxt{display:block; font-size:10px}
+h3.aplinkHead .appIcons{ display:inline-block !important}
+.intlSim h2{ right:5% !important; width:50% !important;}
+.vatRefund h2{ right:5% !important; width:50% !important}
+.forexSlide h2{ right:5% !important; width:45% !important}
+.forexSlide img{height: 100%;left: -7%; position: relative; width: 146% !important;}
+.vatMgmt h2{ right:5% !important; width:50% !important}
+.lookOut h2{ right:5% !important; top:5% !important; width:58% !important}
+.brodCast h2{ right:5% !important;top:5% !important; width:58% !important}
+.brodCast h2 span{ display:none}
+.appIcons{ padding-top:5px}
+.brodCast h2:before{content:"Travel Risk Management App"; font:300 20px/140% "Roboto",sans-serif; color:#1a3192; display:block}
+.vrMenu{width:80%}
+}
+@media only screen and (max-width: 350px)
+{
+/*.da-dots{ height:6px; width:90%; margin:0 5%;display: -webkit-box; display: -moz-box; display: -ms-flexbox;display: -webkit-flex;display: flex; display: -webkit-flex;}
+.da-dots span{height:6px;flex:1 1 0;flex:1 1 0 ;-ms-flex:1 1 0 ;-webkit-flex:1 1 0 ; -moz-flex: 1 1 0; top:0}
+.da-dots span.da-dots-current:after{ height:6px}*/
+.da-slider,.da-slide{ height:160px !important}
+.da-slide h2{ font-size:28px !important; top:15% !important; margin:0}
+.da-slide h2 span{font-size:16px !important; font-weight:400 !important}
+.da-slide h2 .claylogoBlue{ background:url("../images/banners/clay-banner-logo.png") no-repeat center top / 40px 40px; height:45px;}
+.da-slide h2 .bigGray a{ font:400 14px/24px "Roboto",sans-serif; padding:0 7px}
+.appDownload{ height:38px}
+.appDownload a i{font-size:23px; line-height:36px;}
+div.btnTxt{font:300 12px/16px "Roboto",sans-serif}
+div.btnSubTxt{font:400 16px/16px "Roboto",sans-serif}
+.bannerBox{overflow:hidden}
+.bannerBox img{width:170% !important; float:left; left:-15%}
+.lookOut img{width:160% !important; float:left; left:-13%; position:relative}
+.brodCast img{width:113% !important; float:left; left:-5%; position:relative}
+h3.aplinkHead{ margin-top:0}
+h3.aplinkHead div.dwTxt{display:block; font-size:10px}
+h3.aplinkHead .appIcons{ display:inline-block !important}
+.intlSim h2{ right:5% !important; width:60% !important;}
+.vatRefund h2{ right:5% !important; width:50% !important}
+.forexSlide h2{ right:5% !important; width:45% !important}
+.forexSlide img{height: 100%;left: -7%; position: relative; width: 146% !important;}
+.vatMgmt h2{ right:5% !important; width:50% !important}
+.lookOut h2{ right:5% !important; top:5% !important; width:58% !important}
+.brodCast h2{ right:5% !important;top:5% !important; width:58% !important}
+.brodCast h2 span{ display:none}
+.appIcons{ padding-top:5px}
+.brodCast h2:before{content:"Travel Risk Management App"; font:400 16px/140% "Roboto",sans-serif; color:#1a3192; display:block}
+.vrMenu{width:80%}
+    }

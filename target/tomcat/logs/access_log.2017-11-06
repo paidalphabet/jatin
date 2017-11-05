@@ -1,0 +1,6 @@
+0:0:0:0:0:0:0:1 - - [06/Nov/2017:00:06:57 +0530] "POST /global-konnect-final/send-email HTTP/1.1" 404 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [06/Nov/2017:00:08:23 +0530] "GET /global-konnect-final/send-email HTTP/1.1" 404 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [06/Nov/2017:00:08:23 +0530] "GET /global-konnect-final/send-email HTTP/1.1" 404 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [06/Nov/2017:00:08:24 +0530] "GET /global-konnect-final/send-email HTTP/1.1" 404 - http-bio-8080-exec-5 0
+0:0:0:0:0:0:0:1 - - [06/Nov/2017:00:08:24 +0530] "GET /global-konnect-final/send-email HTTP/1.1" 404 - http-bio-8080-exec-6 0
+0:0:0:0:0:0:0:1 - - [06/Nov/2017:00:08:34 +0530] "GET /global-konnect-final/About-Us HTTP/1.1" 404 - http-bio-8080-exec-7 0
