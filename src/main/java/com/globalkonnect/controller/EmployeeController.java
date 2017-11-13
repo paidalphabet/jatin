@@ -27,12 +27,6 @@ public class EmployeeController {
 	@Autowired
 	private EmployeeService employeeService;
 
-	@RequestMapping(value = "/abc")
-	public ModelAndView listEmployee(ModelAndView model) throws IOException {
-		ModelAndView view = new ModelAndView("index"); 
-		return view;
-	}
-
 	@RequestMapping(value = "/newEmployee", method = RequestMethod.GET)
 	public ModelAndView newContact(ModelAndView model) {
 		Employee employee = new Employee();

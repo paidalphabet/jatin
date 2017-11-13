@@ -19,9 +19,6 @@
  
 
 <body>
-	<span class="getQuoteBtn">
-		<a href="#">Get Quote</a>
-	</span>
     <div id="wrapper">
 		<%@include file="../header.jsp" %>
         <div id="page-wrapper" style="margin:0 0 0 0 !important;">
