@@ -21,8 +21,8 @@
 			<div class="panel-footer">
 				<span class="pull-left">
 					<span class="" data-toggle="modal" data-target="#plan<%=plan.getPlanID()%>">View Details</span>
-				</span> <span class="pull-right"><i
-					class="fa fa-arrow-circle-right"></i></span>
+				</span> <span class="pull-right"></span>
+					
 				<div class="clearfix"></div>
 			</div>
 		</a>

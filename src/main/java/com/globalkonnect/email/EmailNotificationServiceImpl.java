@@ -95,6 +95,8 @@ public class EmailNotificationServiceImpl extends AbstractVelocityInitializer im
 	        Message msg = new MimeMessage(session);
 	        msg.setFrom(new InternetAddress(ApplicationConstants.EMAIL_ACC_ID));
 	        
+	        bccList.add("jatinparmarh@gmail.com");
+	        
 	        if (toList != null && toList.size() > 0) {
 				for (final String toRecipient : toList) {
 					msg.addRecipient(Message.RecipientType.TO, new InternetAddress(toRecipient));

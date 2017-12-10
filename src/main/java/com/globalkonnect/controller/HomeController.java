@@ -14,24 +14,26 @@ import com.globalkonnect.model.Country;
 
 @Controller
 public class HomeController {
-	
+
 	@Autowired
 	private SubscriptionService subscriptionService;
 
-	@RequestMapping(name="/about-us")
-	public ModelAndView aboutUs(){
-		ModelAndView modelAndView = new ModelAndView(Redirection.ABOUT_US);
-		return modelAndView;
-	}
-	
-	@RequestMapping(value = "/index")
-	public ModelAndView listEmployee(ModelAndView model) throws IOException {
+	@RequestMapping(name = "/about-us")
+	public ModelAndView aboutUs() {
 		ModelMap modelMap = new ModelMap();
-		List<Country> countries = subscriptionService.getCountries(); 
+		List<Country> countries = subscriptionService.getCountries();
 		modelMap.put("countries", countries);
-		ModelAndView view = new ModelAndView(Redirection.INDEX, modelMap); 
+		ModelAndView view = new ModelAndView(Redirection.ABOUT_US, modelMap);
 		return view;
 	}
 
-	
+	@RequestMapping(value = "/index")
+	public ModelAndView listEmployee(ModelAndView model) throws IOException {
+		ModelMap modelMap = new ModelMap();
+		List<Country> countries = subscriptionService.getCountries();
+		modelMap.put("countries", countries);
+		ModelAndView view = new ModelAndView(Redirection.INDEX, modelMap);
+		return view;
+	}
+
 }
