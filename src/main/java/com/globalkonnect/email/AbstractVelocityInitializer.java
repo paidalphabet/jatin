@@ -26,6 +26,17 @@ public abstract class AbstractVelocityInitializer {
 	
 	@Autowired SubscriptionDAO subscriptionDao;
 	
+	private String subject;
+	
+
+	public String getSubject() {
+		return subject;
+	}
+
+	public void setSubject(String subject) {
+		this.subject = subject;
+	}
+	
 	protected VelocityContext velocityContext;
 
 	protected void init() {
@@ -55,6 +66,7 @@ public abstract class AbstractVelocityInitializer {
 				template.setData(node);
 				template.setRuntimeServices(runtimeServices);
 				template.initDocument();
+				this.setSubject(emailTemplate.getSubject());
 			} catch (ParseException e) {
 				LOGGER.debug("Exception in getTemplate method for ID : "+templateID);
 				e.printStackTrace();

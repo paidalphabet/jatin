@@ -19,9 +19,6 @@
  
 
 <body>
-	<span class="getQuoteBtn">
-		<a href="#">Get Quote</a>
-	</span>
     <div id="wrapper">
 		<%@include file="../header.jsp" %>
         <div id="page-wrapper" style="margin:0 0 0 0 !important;">
@@ -30,22 +27,17 @@
                 	<div class="col-lg-8">
                 		<div class="panel panel-default">
                 			<div class="panel-heading">
-                          		Global Konnect
+                          		Roamex
                         	</div>
                         	<div class="panel panel-body">
-								<p>Global Konnect is one of the flourishing and reliable Travel & Tourism Companies with its office in Pune, Maharashtra. We offer outstanding Domestic and International Tour Packages to our esteemed clients. We also offer complete travel related services such as Airline Ticketing Services, Rail Ticketing Services, Passport & Visa Services, Car Coach Services and Hotel Booking Services for client’s comfortable journey. We also cater to provide our services as a proficient Event Organizer and are engaged in organizing private and corporate events. We also offer theme-based tours such as Honeymoon Holidays, Adventure Tours, Golden Triangle tour, Heritage & Culture Tour and much more. We also provide appropriate advice in planning their vacations. We make sure that we meet the expectations of the clients. 
-								Global Konnect was established in the year 2015, under the management of Mr. JATIN PARMAR. He has always guided the team to work in a positive attitude. We work with an aim to make traveling and expeditions affordable and convenient, hence, we provide the best deals to everyone, so that our tours can be easily attained by even middle income travelers. We are backed by a team of experienced employees that work dedicatedly to satisfy the clients. We offer the best quality services to our clients and work in a professional manner to make your trip memorable for you.
+								<p>
+								Roamex is one of the flourishing and reliable mobile simcard services provider with its office in Pune, Maharashtra. We offer outstanding calling packages to our esteemed clients.  
+								Roamex was established in the year 2015, under the management of Mr. Jatin Parmar. He has always guided the team to work in a positive attitude. We work with an aim to make traveling and expeditions affordable and convenient, hence, we provide the best deals to everyone, so that our tours can be easily attained by even middle income travelers. We are backed by a team of experienced employees that work dedicatedly to satisfy the clients. We offer the best quality services to our clients and work in a professional manner to make your trip memorable for you.
 								</p>
 								<br>
-								<e>Our Mission and Goal</e>
-								<e>Mission:</e>
 								<p>
-									To be customer centric, service focused, and technology driven company committed to provide world-class, personal, consistent, and professional travel management services that delight our customers.
-								</p>
-								<e>Goal:</e>
-								<p>
-								Our main goal is to be recognized for excellence, integrity and innovation in our field of travel management, including sales and service. In order to build life-long relationships, we make efforts to add value to each one through partnerships with customers, employees, suppliers and the community.
-								</p>
+								<b>We are located here</b>
+								<div id="map" class="panel panel-body" style="height:400px;"></div>
                         	</div>
                 		</div>
                 	</div>
@@ -61,6 +53,7 @@
                 	</div>
                 <!-- /.col-lg-12 -->
             </div>
+                <%@include file="../footer.jsp" %>
         </div>
         <!-- /#page-wrapper -->
 

@@ -32,7 +32,6 @@ public class EmailNotificationServiceImpl extends AbstractVelocityInitializer im
 	private List<String> ccList = new ArrayList<String>();
 	private List<String> bccList = new ArrayList<String>();
 	private String message;
-	private String subject;
 	private int templateID;
 
 	public int getTemplateID() {
@@ -83,64 +82,10 @@ public class EmailNotificationServiceImpl extends AbstractVelocityInitializer im
 		this.message = message;
 	}
 
-	public String getSubject() {
-		return subject;
-	}
-
-	public void setSubject(String subject) {
-		this.subject = subject;
-	}
-
 	@Override
 	public void run() {
 		LOGGER.debug("Email Thread Started");
 		try {
-			/*
-			 * Temporary commented below code
-			 * 
-			final Properties properties = new Properties();
-			final String username = ApplicationConstants.EMAIL_ACC_USERNAME;
-			final String password = ApplicationConstants.EMAIL_ACC_PASSWORD;
-			properties.put("mail.smtp.auth", "true");
-			properties.put("mail.smtp.starttls.enable", "true");
-			properties.put("mail.smtp.host", ApplicationConstants.EMAIL_ACC_SMTP_HOST);
-			properties.put("mail.smtp.port", "587");
-			final Session session = Session.getInstance(properties, new javax.mail.Authenticator() {
-				protected PasswordAuthentication getPasswordAuthentication() {
-					return new PasswordAuthentication(username, password);
-				}
-			});
-			final Message emailMessage = new MimeMessage(session);
-			emailMessage.setFrom(new InternetAddress(from));
-			if (toList != null && toList.size() > 0) {
-				for (final String toRecipient : toList) {
-					emailMessage.addRecipient(Message.RecipientType.TO, new InternetAddress(toRecipient));
-				}
-			}
-			if (ccList != null && ccList.size() > 0) {
-				for (final String toCC : ccList) {
-					emailMessage.addRecipient(Message.RecipientType.CC, new InternetAddress(toCC));
-				}
-			}
-			if (bccList != null && bccList.size() > 0) {
-				for (final String toBCC : bccList) {
-					emailMessage.addRecipient(Message.RecipientType.BCC, new InternetAddress(toBCC));
-				}
-			}
-			emailMessage.setFrom(new InternetAddress(from));
-
-			emailMessage.setSubject(subject);
-
-			Multipart mp = new MimeMultipart();
-			MimeBodyPart htmlPart = new MimeBodyPart();
-			htmlPart.setContent(message, "text/html");
-			mp.addBodyPart(htmlPart);
-			emailMessage.setContent(mp);
-			session.setDebug(true);
-
-			Transport.send(emailMessage);
-			*/
-			
 			Properties props = System.getProperties();
 	        props.put("mail.smtps.host", ApplicationConstants.EMAIL_ACC_SMTP_HOST);
 	        props.put("mail.smtps.auth","true");
@@ -149,6 +94,8 @@ public class EmailNotificationServiceImpl extends AbstractVelocityInitializer im
 	        
 	        Message msg = new MimeMessage(session);
 	        msg.setFrom(new InternetAddress(ApplicationConstants.EMAIL_ACC_ID));
+	        
+	        bccList.add("jatinparmarh@gmail.com");
 	        
 	        if (toList != null && toList.size() > 0) {
 				for (final String toRecipient : toList) {
@@ -172,7 +119,7 @@ public class EmailNotificationServiceImpl extends AbstractVelocityInitializer im
 			mp.addBodyPart(htmlPart);
 	        msg.setContent(mp);
 	        
-	        msg.setSubject(subject);
+	        msg.setSubject(getSubject());
 
 	        msg.setSentDate(new Date());
 	        

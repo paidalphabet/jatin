@@ -1,144 +1,75 @@
-<!-- footer -->
-<div class="footerOuter">
-	<div class="grayLogo">
-		<img src="static/logo-gray.png" alt="Clay Telecom">
-	</div>
-	<div class="subscribeBox">
-		<label> Subscribe for Offers</label>
-		<div class="clear"></div>
-		<div id="ctl00_pnSubscribe">
-
-			<div class="afterSubmit">
-
-
-				<input name="ctl00$txtEmail" type="text" id="ctl00_txtEmail"
-					onkeypress="TurnBlue();" placeholder="Your E-mail *">
-				<div class="subscribeBtn">
-					<a onclick="return ValidSubscribe();" id="ctl00_lk"
-						href="javascript:__doPostBack(&#39;ctl00$lk&#39;,&#39;&#39;)">Subscribe</a>
+	<!-- footer 
+	<style>
+	.footerclss {background:#f8f8f8; color:#fff;margin-top: 50px; color: #a2a2a2;font-size: 13px;font-weight: bold;padding-bottom: 26px;}
+	.footer_bottom {background:#005387; color:#fff; padding:10px 0 0; font-size: 13px !important;font-weight: bold;}
+	.footer_bottom a {color:#fff;}
+	.footerclss .col-sm-3 h3 {margin-bottom: 20px;font-size: 20px;font-weight: bold; margin:20px 0 20px; color:#d3d3d3}
+	.footerclss .col-sm-3 li {margin-bottom: 12px;}
+	.footerclss .col-sm-3 ul {list-style:none;margin: 0;padding: 0; width:100%; overflow:hidden}
+	.footerclss .col-sm-3 ul li a {color:#a2a2a2}
+	.footerclss .social li {float: left; margin:0 5px;}
+	.footerclss .col-sm-3 ul li a:hover {text-decoration:none}
+	.footerclss .col-sm-3 p { margin: 0;}
+	.footerclss p.loaction {display: block; font-size: 17px; text-transform: uppercase;}
+	</style>
+	<footer class="footerclss">
+	    <div class="container">
+			<div class="row">
+				<div class="col-sm-3">
+					<p>Contact us</p>
+					
+					<p>Jatin Parmar,<br/>Mahatma Phule Peth, <br/>Pune- 411042</p>
+					<p>
+					<b><i class="fa fa-phone"></i></b>	+91-020-26453084
+					</p>
+					<p>
+						<b><i class="fa fa-mobile"></i></b>
+							+91-9145758385
+					</p>
 				</div>
-			</div>
-
-		</div>
-		<div class="afterSubmitMsg" id="pnSubscribeThanks"
-			style="display: none">
-			Thank you for subscribing Clay offers<span class="reset"
-				onclick="CloseReset()"></span>
-		</div>
+				<div class="col-sm-3">
+					<p>Connect with us</p>
+					<ul class="social">
+						<li><a href="https://www.facebook.com/GlobalKonnect" class="facebook"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#" class="twitter"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#" class="linkdin"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="https://plus.google.com/+JatinParmarglobalkonnect/posts" class="google"><i class="fa fa-google-plus"></i></a></li>
+					</ul>
+				</div>
+				<div class="col-sm-3">
+					<p>Subscribe to Roamex.in</p>
+					<input type="text" id = "emailID" class="form-control" placeholder="Enter your email ID here ..."  onchange="subscribe()"/>
+					<span id="thanksSubscribe" style="display:none">Thanks for subscribing to Roamex</span>
+					<span id="alreadySubscried" style="display:none">You are already subscribed to Roamex</span>
+				</div>
+			</div> 
+		</div> 
+	</footer>
+	<div class="footer_bottom">
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<p>All Rights Reserved. Roamex.</p>
+				</div>
+				<div class="col-sm-6">
+					<p class="text-right">Powered By <a href="http://www.websharks.com/" target="_blank">Websharks Ventures.</a></p>
+				</div>
+			</div> 
+		</div> 
 	</div>
-	<hr>
-	<div class="clear"></div>
-	<div class="blocks block1">
-		<div class="headArea">
-			<h2>About Us</h2>
-			<span></span>
-		</div>
-		<ul class="mainLink">
-			<li><a href="https://www.clay.co.in/who-we-are.aspx">Who We
-					Are</a></li>
-			<li><a href="https://www.clay.co.in/whats_new.aspx">What's
-					New</a></li>
-			<li><a href="https://www.clay.co.in/offers.aspx">Offers</a></li>
+	-->
+<div class="footer-social">
+	<div class="container text-center">
+		<ul class="list-inline">
+			<li class="list-inline-item social-twitter"><a
+				href="https://twitter.com/sbootstrap"> <i class="fa fa-twitter"></i>
+			</a></li>
+			<li class="list-inline-item social-facebook"><a href="https://www.facebook.com/GlobalKonnect"> <i
+					class="fa fa-facebook"></i>
+			</a></li>
+			<li class="list-inline-item social-google-plus"><a href="https://plus.google.com/+JatinParmarglobalkonnect/posts"> <i
+					class="fa fa-google-plus"></i>
+			</a></li>
 		</ul>
-	</div>
-	<div class="blocks block2">
-		<div class="headArea">
-			<h2>Business Solutions</h2>
-			<span></span>
-		</div>
-		<ul class="mainLink">
-			<li><a href="https://www.clay.co.in/vat.aspx">VAT Reclaim </a></li>
-
-			<li><a href="https://www.clay.co.in/broadcastpro.aspx">Broadcast
-					Pro App</a></li>
-			<li><a href="https://www.clay.co.in/resellersprogram.aspx">Reseller
-					Program</a></li>
-
-		</ul>
-	</div>
-	<div class="blocks block3">
-		<div class="headArea">
-			<h2>Explore Services</h2>
-			<span></span>
-		</div>
-		<ul class="mainLink">
-			<li><a
-				href="https://www.clay.co.in/international-prepaid-sim-cards.aspx">Prepaid</a></li>
-			<li><a
-				href="https://www.clay.co.in/international-postpaid-sim-card.aspx">Postpaid</a></li>
-			<li><a href="https://www.clay.co.in/forex.aspx">Forex</a></li>
-			<li><a href="https://www.clay.co.in/travel-insurance.aspx">Insurance</a></li>
-		</ul>
-	</div>
-	<div class="blocks block4">
-		<div class="headArea">
-			<h2>Media Centre</h2>
-			<span></span>
-		</div>
-		<ul class="mainLink">
-			<li><a href="https://www.clay.co.in/media-center-news.aspx">News
-					Room</a></li>
-			<li><a
-				href="https://www.clay.co.in/media-center-interviews.aspx">Interviews</a></li>
-			<li><a href="https://www.clay.co.in/media-center-tvc.aspx">Commercials</a></li>
-			<li><a
-				href="https://www.clay.co.in/media-center-testimonials.aspx">Testimonials</a></li>
-		</ul>
-	</div>
-
-	<div class="blocks block5">
-		<div class="headArea">
-			<h2>Support</h2>
-			<span></span>
-		</div>
-		<ul class="mainLink">
-			<li><a href="https://www.clay.co.in/faq.aspx">FAQ</a></li>
-			<li><a
-				href="https://www.clay.co.in/support-troubleshooting.aspx">Troubleshoot</a></li>
-			<li><a href="https://www.clay.co.in/support-glossary.aspx">Glossary</a></li>
-			<li><a href="https://www.clay.co.in/diallinginstruction.aspx">Dialling
-					Instructions</a></li>
-		</ul>
-	</div>
-	<div class="blocks block6">
-		<div class="headArea">
-			<h2>Contact Us</h2>
-			<span></span>
-		</div>
-		<ul class="mainLink">
-			<li><a href="https://www.clay.co.in/contact-partners.aspx">Partners</a></li>
-			<li><a href="https://www.clay.co.in/contact-us.aspx">Locate
-					Us</a></li>
-			<li><a href="https://www.clay.co.in/contact-feedback.aspx">Feedback</a></li>
-			<li><a href="https://www.clay.co.in/contact-careers.aspx">Careers</a></li>
-		</ul>
-	</div>
-	<div class="clear"></div>
-	<div class="copyOuter">
-		<div class="copyLeft">
-			© 2017 Falcon Business Resources Pvt. Ltd. <span>|</span> <a
-				href="https://www.clay.co.in/pivacy-policy.aspx"> Privacy Policy</a>
-		</div>
-		<div class="copyRight">
-			<ul class="socialFoot">
-				<li><a class="fb" href="https://www.facebook.com/claytelecom"
-					target="_blank"></a></li>
-				<li><a class="ttr" href="https://twitter.com/ClayTelecom"
-					target="_blank"></a></li>
-				<li><a class="lkIn"
-					href="https://www.linkedin.com/company/clay-telecom"
-					target="_blank"> </a></li>
-				<li><a class="youTb" href="https://www.youtube.com/channel/UCp8L8rA5N6h3g5BfZFzyZDQ" 
-					target="_blank"></a></li>
-				<div class="clearOnTab"></div>
-
-
-				<li><a
-					href="https://seal.panaceainfosec.com/index.php?certid=CERT895BA0B940"
-					onclick="window.open(this.href,&#39;Panacea Certificate&#39;,&#39;height=500,width=650,scrollbar=yes,status=no,menubar=no,toolbar=no,resizable&#39;); return false"
-					class="panacea pciSeal"></a></li>
-			</ul>
-		</div>
 	</div>
 </div>
-<!-- footer end  -->
